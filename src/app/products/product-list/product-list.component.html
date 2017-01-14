@@ -1,1 +1,7 @@
 <h2>Products</h2>
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+<div *ngIf="products && products.length > 0">
+  <div class="row" *ngFor="let product of products">
+    <pre>{{ product | json }}</pre>
+  </div>
+</div>
