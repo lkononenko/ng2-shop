@@ -10,12 +10,23 @@ import { CONST } from '../const';
 
 @Injectable()
 export class ProductsService {
+  currentProduct: Product;
+  private productsApiUrl: string = CONST.API_URL + 'products.json';
 
   constructor(private http: Http) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get(CONST.API_URL + 'products.json')
+    return this.http.get(this.productsApiUrl)
       .map(this.extractProducts)
+      .catch(this.handleError);
+  }
+
+  getCurrentProduct(slug: string) {
+    return this.http.get(this.productsApiUrl)
+      .map((res: Response) => {
+        let foundProduct = res.json().filter(product => product.slug === slug);
+        return this.currentProduct = new Product(foundProduct[0]);
+      })
       .catch(this.handleError);
   }
 

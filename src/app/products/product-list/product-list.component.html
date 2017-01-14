@@ -1,19 +1,19 @@
-<div class="container content">
-  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
-  <div *ngIf="products && products.length > 0" class="products">
-    <h2>Products</h2>
-    <div class="row products-list">
-      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
-        <div class="item-wrap">
-          <div class="item-image" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.price | currency:'EUR':true:'1.2-2' }}</p>
-          <button class="btn btn-primary">View Details</button>
-        </div>
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+<div *ngIf="products && products.length > 0" class="products">
+  <h2>Products</h2>
+  <div class="row products-list">
+    <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+      <div class="item-wrap">
+        <div class="bg-img item-image"
+             [ngStyle]="{'background-image': 'url(' + product.image + ')'}"
+             (click)="productDetail(product)"></div>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price | currency:'EUR':true:'1.2-2' }}</p>
+        <button class="btn btn-primary" (click)="productDetail(product)">View Details</button>
       </div>
     </div>
   </div>
-  <div *ngIf="products && products.length == 0">
-    There are no products.
-  </div>
+</div>
+<div *ngIf="products && products.length == 0">
+  There are no products.
 </div>

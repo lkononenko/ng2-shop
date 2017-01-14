@@ -19,17 +19,8 @@
   }
 
   .item-image {
-    width: 100%;
     height: 18rem;
-    margin: 0 auto 1rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    @include background-size(contain);
     cursor: pointer;
-  }
-
-  h3 {
-    font-size: 1.25rem;
   }
 
   .btn {

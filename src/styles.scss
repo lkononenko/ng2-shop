@@ -19,13 +19,16 @@ h1 {
 h2 {
   color: $color_brand2;
 }
+h3 {
+  font-size: 1.25rem;
+}
 
 a,
 a:visited {
   color: $color_brand;
 }
 a:hover {
-  color: $color_brand2;
+  color: #07C;
   text-decoration: none;
 }
 .btn {
@@ -38,6 +41,14 @@ a:hover {
 }
 .btn-primary:hover {
   background-color: #07C;
+}
+.bg-img {
+  width: 100%;
+  height: 20rem;
+  margin: 0 auto 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include background-size(contain);
 }
 
 @media (max-width: 499px) {
