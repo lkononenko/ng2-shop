@@ -1,0 +1,11 @@
+$color_main: #333;
+$color_brand: #09f;
+$color_brand2: #090;
+$color_bg: #f8f8f8;
+
+@mixin background-size($values) {
+  -webkit-background-size: $values;
+  -moz-background-size: $values;
+  -o-background-size: $values;
+  background-size: $values;
+}

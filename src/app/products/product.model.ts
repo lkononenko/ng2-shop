@@ -14,6 +14,6 @@ export class Product {
     this.slug = product.slug;
     this.description = product.description || '';
     this.price = product.price || 0;
-    this.image = CONST.IMAGE_URL + (product.image || CONST.IMAGE_DEFAULT);
+    this.image = CONST.IMAGE_URL + 'products/' + (product.image || CONST.IMAGE_DEFAULT);
   }
 }
