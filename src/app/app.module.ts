@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './products/products.module';
+import { CheckoutModule } from './checkout/checkout.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductsModule } from './products/products.module';
     HttpModule,
 
     AppRoutingModule,
-    ProductsModule
+    ProductsModule,
+    CheckoutModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
