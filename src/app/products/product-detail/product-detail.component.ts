@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { ProductsService } from '../products.service';
 import { Product } from '../product.model';
@@ -14,10 +14,16 @@ export class ProductDetailComponent implements OnInit {
   errorMessage: string;
 
   constructor(private productsService: ProductsService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.getProduct();
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/checkout', 'product', this.product.slug]);
+    this.productsService.currentProduct = this.product;
   }
 
   private getProduct() {
@@ -25,16 +31,11 @@ export class ProductDetailComponent implements OnInit {
       this.product = this.productsService.currentProduct;
     } else {
       this.route.params.subscribe(
-        (params: Params) => this.getCurrentProduct(params['slug'])
+        (params: Params) => this.productsService.getProductBySlug(params['slug']).subscribe(
+          (product: Product) => this.product = product,
+          (error: string) => this.errorMessage = error
+        )
       );
     }
   }
-
-  private getCurrentProduct(slug: string) {
-    this.productsService.getCurrentProduct(slug).subscribe(
-      (product: Product) => this.product = product,
-      (error: string) => this.errorMessage = error
-    );
-  }
-
 }

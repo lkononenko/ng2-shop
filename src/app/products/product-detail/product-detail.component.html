@@ -1,4 +1,4 @@
-<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+<p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
 <div *ngIf="product" class="row product-detail">
   <div class="col-lg-9 col-md-8 col-sm-6">
     <h2>{{ product.name }}</h2>
@@ -10,7 +10,7 @@
     <div class="detail-info">
       <h3>{{ product.name }}</h3>
       <p>{{ product.price | currency:'EUR':true:'1.2-2' }}</p>
-      <button class="btn btn-primary">Purchase</button>
+      <button class="btn btn-primary" (click)="goToCheckout()">Purchase</button>
     </div>
   </div>
 </div>

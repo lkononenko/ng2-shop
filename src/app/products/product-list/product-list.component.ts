@@ -26,10 +26,9 @@ export class ProductListComponent implements OnInit {
   }
 
   private getProducts() {
-    this.productsService.getProducts()
-      .subscribe(
-        (products: Product[]) => this.products = products,
-        (error: string) => this.errorMessage = error
-      );
+    this.productsService.getProducts().subscribe(
+      (products: Product[]) => this.products = products,
+      (error: string) => this.errorMessage = error
+    );
   }
 }

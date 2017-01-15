@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -13,7 +14,8 @@ export class ProductsService {
   currentProduct: Product;
   private productsApiUrl: string = CONST.API_URL + 'products.json';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+              private router: Router) { }
 
   getProducts(): Observable<Product[]> {
     return this.http.get(this.productsApiUrl)
@@ -21,11 +23,15 @@ export class ProductsService {
       .catch(this.handleError);
   }
 
-  getCurrentProduct(slug: string) {
+  getProductBySlug(slug: string) {
     return this.http.get(this.productsApiUrl)
       .map((res: Response) => {
         let foundProduct = res.json().filter(product => product.slug === slug);
-        return this.currentProduct = new Product(foundProduct[0]);
+        if (foundProduct[0]) {
+          return new Product(foundProduct[0]);
+        } else {
+          this.router.navigate(['/products'])
+        }
       })
       .catch(this.handleError);
   }

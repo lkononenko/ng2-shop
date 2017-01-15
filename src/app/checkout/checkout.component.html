@@ -1,1 +1,12 @@
-<h2>Personal details</h2>
+<div *ngIf="item" class="row checkout-view">
+  <div class="col-lg-9 col-md-8 col-sm-6">
+    <h2>Personal details</h2>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="bg-img detail-image" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
+    <div class="detail-info">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.price | currency:'EUR':true:'1.2-2' }}</p>
+    </div>
+  </div>
+</div>
