@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutComponent } from './checkout.component';
 import { CheckoutService } from './checkout.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
 
-    CheckoutRoutingModule
+    CheckoutRoutingModule,
+    SharedModule
   ],
   declarations: [ CheckoutComponent ],
   providers: [ CheckoutService ]

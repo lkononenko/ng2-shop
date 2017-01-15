@@ -3,10 +3,6 @@
     <h2>Personal details</h2>
   </div>
   <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="bg-img detail-image" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-    <div class="detail-info">
-      <h3>{{ item.name }}</h3>
-      <p>{{ item.price | currency:'EUR':true:'1.2-2' }}</p>
-    </div>
+    <app-product-info-block [product]="item"></app-product-info-block>
   </div>
 </div>

@@ -6,11 +6,10 @@
     <p>{{ product.description }}</p>
   </div>
   <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="bg-img detail-image" [ngStyle]="{'background-image': 'url(' + product.image + ')'}"></div>
-    <div class="detail-info">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.price | currency:'EUR':true:'1.2-2' }}</p>
-      <button class="btn btn-primary" (click)="goToCheckout()">Purchase</button>
-    </div>
+    <app-product-info-block
+      [product]="product"
+      [buttonTitle]="'Purchase'"
+      (buttonClicked)="goToCheckout()"
+    ></app-product-info-block>
   </div>
 </div>
