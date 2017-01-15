@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { CheckoutService } from './checkout.service';
 import { Product } from '../products/product.model';
@@ -14,7 +14,8 @@ export class CheckoutComponent implements OnInit {
   item: Product;
 
   constructor(private checkoutService: CheckoutService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.getCheckoutItem();
@@ -23,7 +24,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   goToConfirmation(formData) {
-    console.log(formData.fullName);
+    this.checkoutService.item = this.item;
+    this.checkoutService.customer = formData;
+    this.router.navigate(['/checkout/confirmation']);
   }
 
   private getCheckoutItem() {

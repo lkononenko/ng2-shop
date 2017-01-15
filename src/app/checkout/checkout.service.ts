@@ -7,8 +7,9 @@ import { Product } from '../products/product.model';
 
 @Injectable()
 export class CheckoutService {
-  // private item: Product | Service;
-  private item: Product;
+  // item: Product | Service;
+  item: Product;
+  customer: { fullName: string; };
 
   // private itemGotten = new BehaviorSubject<Product | Service>(this.item);
   private itemGotten = new BehaviorSubject<Product>(this.item);

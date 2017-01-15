@@ -1,0 +1,7 @@
+<div *ngIf="item && customer" class="confirmation-view">
+  <h2>Thank you!</h2>
+  <p>Dear {{ customer.fullName }},</p>
+  <p>thank you for purchasing <b>{{ item.name }}</b>.</p>
+  <p>KPN</p>
+  <a routerLink="/products" class="go-back">&laquo; All Products</a>
+</div>
