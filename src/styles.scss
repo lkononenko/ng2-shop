@@ -38,9 +38,14 @@ a:hover {
 .btn-primary {
   color: #fff;
   background-color: $color_brand;
-}
-.btn-primary:hover {
-  background-color: #07C;
+
+  &:hover {
+    background-color: #07C;
+  }
+
+  &:disabled {
+    background-color: $color_brand;
+  }
 }
 .bg-img {
   width: 100%;
@@ -49,6 +54,14 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center;
   @include background-size(contain);
+}
+
+.form-control {
+  border-radius: 0;
+
+  &.ng-invalid.ng-dirty {
+    border-color: #d9534f;
+  }
 }
 
 @media (max-width: 499px) {

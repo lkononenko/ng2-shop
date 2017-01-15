@@ -1,6 +1,7 @@
 <div *ngIf="item" class="row checkout-view">
   <div class="col-lg-9 col-md-8 col-sm-6">
     <h2>Personal details</h2>
+    <app-personal-details-form (formSubmitted)="goToConfirmation($event)"></app-personal-details-form>
   </div>
   <div class="col-lg-3 col-md-4 col-sm-6">
     <app-product-info-block [product]="item"></app-product-info-block>

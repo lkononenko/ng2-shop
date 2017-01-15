@@ -20,5 +20,4 @@ export class ProductInfoBlockComponent implements OnInit {
   public clickButton() {
     this.buttonClicked.emit();
   }
-
 }

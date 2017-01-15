@@ -1,0 +1,15 @@
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="pdFrom">
+  <div class="form-group">
+    <label>Full name</label>
+    <input class="form-control"
+      type="text"
+      formControlName="fullName"
+      placeholder="Full name">
+    <div *ngIf="formErrors.fullName && pdFrom.get('fullName').touched" class="text-danger">
+      {{ formErrors.fullName }}
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="pdFrom.invalid">
+    Submit Order
+  </button>
+</form>

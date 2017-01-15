@@ -22,6 +22,10 @@ export class CheckoutComponent implements OnInit {
     this.checkoutService.notifyItemGotten.subscribe(item => this.item = item);
   }
 
+  goToConfirmation(formData) {
+    console.log(formData.fullName);
+  }
+
   private getCheckoutItem() {
     this.route.params.subscribe(
       (params: Params) => this.checkoutService.getCheckoutItem(params)
