@@ -10,6 +10,7 @@ import { Product } from '../../products/product.model';
 export class ProductInfoBlockComponent implements OnInit {
   @Input() product: Product;
   @Input() buttonTitle: string;
+  @Input() clickableImage: boolean = false;
   @Output() buttonClicked: EventEmitter<Product> = new EventEmitter<Product>();
 
   constructor() { }

@@ -17,13 +17,13 @@
   &:hover {
     background-color: $color_bg;
   }
-
-  .item-image {
-    height: 18rem;
-    cursor: pointer;
-  }
-
-  .btn {
-    width: 100%;
-  }
+}
+:host /deep/ .item-image {
+  height: 18rem;
+  cursor: pointer;
+}
+:host /deep/ div.item-info {
+  top: 0;
+  padding: 0;
+  border: none;
 }

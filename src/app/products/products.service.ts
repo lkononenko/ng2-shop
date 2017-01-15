@@ -30,7 +30,7 @@ export class ProductsService {
         if (foundProduct[0]) {
           return new Product(foundProduct[0]);
         } else {
-          this.router.navigate(['/products'])
+          this.router.navigate(['/products']);
         }
       })
       .catch(this.handleError);

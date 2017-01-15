@@ -22,8 +22,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   goToCheckout() {
-    this.router.navigate(['/checkout', 'product', this.product.slug]);
     this.productsService.currentProduct = this.product;
+    this.router.navigate(['/checkout', 'product', this.product.slug]);
   }
 
   private getProduct() {
