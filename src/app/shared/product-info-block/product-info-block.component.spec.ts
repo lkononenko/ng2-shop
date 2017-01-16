@@ -19,10 +19,9 @@ describe('ProductInfoBlockComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductInfoBlockComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

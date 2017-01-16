@@ -19,7 +19,6 @@ describe('ConfirmationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ConfirmationComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

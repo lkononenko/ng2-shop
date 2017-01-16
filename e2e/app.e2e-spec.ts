@@ -7,8 +7,8 @@ describe('ng2-shop App', function() {
     page = new Ng2ShopPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying ng2Shop', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('ng2Shop');
   });
 });
